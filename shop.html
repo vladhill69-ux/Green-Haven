@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop – GreenThumb Home Plants</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Browse our homegrown plants: Succulents, ferns, and more. Filter by light, water, and price for your perfect green.">
+  <link rel="canonical" href="shop.html">
+</head>
+<body>
+  <!-- Sticky Nav (Shared) -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Home">🌿 GreenThumb</a>
+      <ul class="nav-links">
+        <li><a href="index.html#shop">Home</a></li>
+        <li><a href="#filters">Filters</a></li>
+        <li><a href="index.html#quiz">Quiz</a></li>
+      </ul>
+      <button id="cart-btn" class="cart-btn" aria-label="View cart (0 items)">🛒 0</button>
+    </div>
+  </nav>
 
+  <!-- Shop Hero -->
+  <section class="shop-hero" role="banner">
+    <div class="shop-hero-content">
+      <h1 class="hero-title">Our Lush Collection</h1>
+      <p class="hero-subtitle">Filter your faves: Low-light legends to sun-soaked stunners. Prices from $10.</p>
+    </div>
+    <div class="shop-hero-bg"></div>
+  </section>
+
+  <!-- Filters & Grid -->
+  <section id="filters" class="shop-section">
+    <div class="filters-container" role="search" aria-label="Plant filters">
+      <div class="filter-group">
+        <label for="light-filter">Light Level:</label>
+        <select id="light-filter" aria-controls="plant-grid">
+          <option value="">All</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="bright">Bright</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="water-filter">Water Needs:</label>
+        <select id="water-filter" aria-controls="plant-grid">
+          <option value="">All</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="price-filter">Max Price:</label>
+        <select id="price-filter" aria-controls="plant-grid">
+          <option value="">All</option>
+          <option value="15">$15</option>
+          <option value="25">$25</option>
+          <option value="50">$50+</option>
+        </select>
+      </div>
+      <button id="clear-filters" class="clear-btn">Clear All</button>
+    </div>
+
+    <div id="filter-status" class="filter-status" aria-live="polite" role="status"></div>
+
+    <div class="plant-grid" id="plant-grid" role="grid" aria-label="Filtered plants">
+      <!-- Dynamic: Populated by JS -->
+    </div>
+  </section>
+
+  <!-- Footer (Shared) -->
+  <footer class="footer">
+    <p>&copy; 2025 GreenThumb Home. Plants with love from our soil to yours.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Inline inventory stub – expand to fetch('/api/plants') later
+    window.plantInventory = [
+      { id: 1, name: 'Echeveria Glow', price: 15, light: 'low', water: 'low', image: 'https://via.placeholder.com/300x200/98FB98/228B22?text=Succulent', tags: 'Drought-tolerant' },
+      { id: 2, name: 'Boston Fern', price: 22, light: 'medium', water: 'medium', image: 'https://via.placeholder.com/300x200/90EE90/228B22?text=Fern', tags: 'Weekly water' },
+      { id: 3, name: 'Monstera Delight', price: 28, light: 'bright', water: 'medium', image: 'https://via.placeholder.com/300x200/98FB98/228B22?text=Monstera', tags: 'Mist often' },
+      { id: 4, name: 'Golden Pothos', price: 12, light: 'low', water: 'low', image: 'https://via.placeholder.com/300x200/90EE90/228B22?text=Pothos', tags: 'Forgiving' },
+      { id: 5, name: 'Snake Plant', price: 18, light: 'low', water: 'low', image: 'https://via.placeholder.com/300x200/98FB98/228B22?text=Snake', tags: 'Air purifier' },
+      { id: 6, name: 'Fiddle Leaf Fig', price: 35, light: 'bright', water: 'medium', image: 'https://via.placeholder.com/300x200/90EE90/228B22?text=Fig', tags: 'Statement piece' }
+    ];
+  </script>
+</body>
+</html>
