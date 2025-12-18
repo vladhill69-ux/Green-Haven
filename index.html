@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenThumb Home – Fresh Plants Delivered</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Homegrown plants for your urban jungle. Low-maintenance succulents to lush ferns—quiz your perfect match!">
+</head>
+<body>
+  <!-- Sticky Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#" class="logo" aria-label="Home">🌿 GreenThumb</a>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <button id="cart-btn" class="cart-btn" aria-label="View cart (0 items)">🛒 0</button>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero" role="banner">
+    <div class="hero-content">
+      <h1 class="hero-title">Fresh from Home Soil</h1>
+      <p class="hero-subtitle">Brighten your space with easy-care greens. Take our quick quiz for your perfect plant match!</p>
+      <button id="quiz-trigger" class="cta-btn">Start Quiz →</button>
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <!-- Featured Plants -->
+  <section id="shop" class="shop-section">
+    <h2 class="section-title">Featured Blooms</h2>
+    <div class="plant-grid" role="grid" aria-label="Featured plants">
+      <article class="plant-card" role="gridcell">
+        <img src="https://via.placeholder.com/300x200/98FB98/228B22?text=Succulent" alt="Echeveria Succulent in terracotta pot" loading="lazy" width="300" height="200">
+        <h3>Echeveria Glow</h3>
+        <p class="price">$15</p>
+        <p class="care-tags">Low light • Drought-tolerant</p>
+        <button class="add-btn" data-product="succulent">Add to Cart</button>
+      </article>
+      <article class="plant-card" role="gridcell">
+        <img src="https://via.placeholder.com/300x200/90EE90/228B22?text=Fern" alt="Boston Fern in hanging basket" loading="lazy" width="300" height="200">
+        <h3>Boston Fern</h3>
+        <p class="price">$22</p>
+        <p class="care-tags">Medium light • Weekly water</p>
+        <button class="add-btn" data-product="fern">Add to Cart</button>
+      </article>
+      <article class="plant-card" role="gridcell">
+        <img src="https://via.placeholder.com/300x200/98FB98/228B22?text=Monstera" alt="Monstera Deliciosa in white pot" loading="lazy" width="300" height="200">
+        <h3>Monstera Delight</h3>
+        <p class="price">$28</p>
+        <p class="care-tags">Bright indirect • Mist often</p>
+        <button class="add-btn" data-product="monstera">Add to Cart</button>
+      </article>
+      <article class="plant-card" role="gridcell">
+        <img src="https://via.placeholder.com/300x200/90EE90/228B22?text=Pothos" alt="Golden Pothos trailing vine" loading="lazy" width="300" height="200">
+        <h3>Golden Pothos</h3>
+        <p class="price">$12</p>
+        <p class="care-tags">Low light • Forgiving</p>
+        <button class="add-btn" data-product="pothos">Add to Cart</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quiz Modal -->
+  <dialog id="quiz-modal" class="quiz-modal" aria-labelledby="quiz-title" aria-hidden="true">
+    <div class="quiz-content">
+      <button id="quiz-close" class="close-btn" aria-label="Close quiz">&times;</button>
+      <h2 id="quiz-title">Find Your Plant Match</h2>
+      <form id="quiz-form" class="quiz-form">
+        <div class="quiz-step active" data-step="1">
+          <p>How much light does your space get?</p>
+          <label><input type="radio" name="light" value="low"> Low (shady corner)</label>
+          <label><input type="radio" name="light" value="medium"> Medium (indirect sun)</label>
+          <label><input type="radio" name="light" value="bright"> Bright (near window)</label>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+        <div class="quiz-step" data-step="2">
+          <p>Watering style?</p>
+          <label><input type="radio" name="water" value="low"> Forgetful (every 2 weeks)</label>
+          <label><input type="radio" name="water" value="medium"> Balanced (weekly)</label>
+          <label><input type="radio" name="water" value="high"> Hands-on (daily mist)</label>
+          <button type="button" class="prev-btn">Back</button>
+          <button type="button" class="next-btn">See Matches</button>
+        </div>
+        <div class="quiz-results" data-step="3">
+          <p>Your matches: Succulent & Pothos!</p>
+          <a href="#shop" class="cta-btn">Shop Now</a>
+          <button type="button" class="prev-btn">Back</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 GreenThumb Home. Plants with love from our soil to yours.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
