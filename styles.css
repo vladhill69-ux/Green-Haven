@@ -276,3 +276,86 @@ h1, h2, h3 { font-family: 'EB Garamond', serif; }
 
 /* Focus Styles for A11y */
 button:focus-visible, a:focus-visible { outline: 2px solid var(--teal-accent); outline-offset: 2px; }
+/* Shop Hero – Subtle Variation */
+.shop-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.shop-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--lime-green) 0%, var(--mint-green) 100%);
+  opacity: 0.7;
+}
+
+/* Filters – Compact & Accessible */
+.filters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--forest-green);
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-group select:focus { outline: 2px solid var(--teal-accent); }
+
+.clear-btn {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background: #ddd;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.clear-btn:hover { background: var(--mint-green); color: var(--white); }
+
+.filter-status {
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  min-height: 1.5rem; /* For screen reader stability */
+}
+
+/* Enhanced Grid – Container Queries for Adaptive Cols */
+@container (min-width: 300px) { .plant-grid { grid-template-columns: repeat(2, 1fr); } }
+@container (min-width: 600px) { .plant-grid { grid-template-columns: repeat(3, 1fr); } }
+@container (min-width: 900px) { .plant-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.shop-section { container-type: inline-size; } /* Enables queries */
